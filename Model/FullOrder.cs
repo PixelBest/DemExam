@@ -16,5 +16,6 @@ namespace DemExam.Model
         public DateTime Date { get; set; }
         public string StatusOrder { get; set; }
         public string StatusServiceInOrder { get; set; }
+        public string Client { get; set; }
     }
 }

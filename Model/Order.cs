@@ -15,5 +15,7 @@ namespace DemExam.Model
         public string StatusServiceInOrder { get; set; }
         public string LeadTime { get; set; }
         public string PriceOrder { get; set; }
+        public int ClientId { get; set; }
+        public string ClientPosition { get; set; }
     }
 }

@@ -6,10 +6,26 @@
         xmlns:local="clr-namespace:DemExam.View"
         mc:Ignorable="d"
         Title="Orders" Height="450" Width="800">
-    <Grid>
-        
-        <DataGrid x:Name="dtg" Margin="2,25,0,0"  ItemsSource = "{Binding FullOrders}" IsReadOnly="True"
-                  AutoGenerateColumns="False" AlternationCount="2" FontFamily="Roboto Condensed">
+    <Grid Margin="0,28,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="121*"/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0" Margin="0,-28,0,0">
+            <MenuItem Header="Дейсвтия" Height="24" Width="69">
+                <MenuItem Header="Сделать заказ" Click="CreateOrder_click"/>
+                <MenuItem Header="Добавить клиента ФЛ"/>
+                <MenuItem Header="Добавить клиента ЮЛ"/>
+            </MenuItem>
+        </Menu>
+
+        <DataGrid x:Name="dtg" ItemsSource = "{Binding FullOrders}" IsReadOnly="True"
+                  AutoGenerateColumns="False" AlternationCount="2" FontFamily="Roboto Condensed" Grid.RowSpan="2">
 
             <DataGrid.Columns>
                 <DataGridTextColumn     Header="Наименование" Width="*"             Binding="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
@@ -19,6 +35,7 @@
                 <DataGridTextColumn     Header="Дата" Width="*"                   Binding="{Binding Date, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
                 <DataGridTextColumn     Header="Статус заказа" Width="*"                   Binding="{Binding StatusOrder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
                 <DataGridTextColumn     Header="Статус услуги в заказе" Width="*"                   Binding="{Binding StatusServiceInOrder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                <DataGridTextColumn     Header="Клиент" Width="*"                   Binding="{Binding Client, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
