@@ -5,10 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DemExam.View"
         mc:Ignorable="d"
-        Title="CreateOrder" Height="412" Width="367">
+        Title="CreateOrder" Height="450" Width="353">
     <Grid>
         <StackPanel>
-            
+            <Label Content="СОЗДАНИЕ АЗКАЗА" HorizontalAlignment="Center" Margin="0,20,0,20" FontSize="25"/>
+            <Label Content="Выберите услугу" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+            <ComboBox x:Name="service_cmb" Width="210" Margin="0,0,0,20"/>
+            <Label Content="Выберите ЮЛ или ФЛ" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+            <ComboBox x:Name="position_cmb" Width="210" Margin="0,0,0,20" SelectionChanged="Changed_cmb"/>
+            <Label Content="Выберите клиента" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+            <ComboBox x:Name="client_cmb" Width="210" Margin="0,0,0,30"/>
+            <Button Content="Добавить заказ" Margin="0,0,0,20" Width="163" Height="34" Click="Add_click"/>
+            <Button Content="Назад" Width="112" Click="Button_Click"/>
         </StackPanel>
     </Grid>
 </Window>

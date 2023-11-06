@@ -23,11 +23,11 @@ namespace DemExam.View
     public partial class Orders : Window
     {
         string connectionString = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DB.accdb;";
-        ObservableCollection<Order> ListOrders;
-        ObservableCollection<ServiceOTK> ListServiceOTK;
-        ObservableCollection<FullOrder> ListFullOrder;
-        ObservableCollection<FL> FL;
-        ObservableCollection<YL> YL;
+        public ObservableCollection<Order> ListOrders;
+        public ObservableCollection<ServiceOTK> ListServiceOTK;
+        public ObservableCollection<FullOrder> ListFullOrder;
+        public ObservableCollection<FL> FL;
+        public ObservableCollection<YL> YL;
         public Orders()
         {
             InitializeComponent();
@@ -100,6 +100,7 @@ namespace DemExam.View
 
                 Order order = new Order()
                 {
+                    Id = id,
                     Date = date,
                     Service = service,
                     StatusOrder = statusOrder,
@@ -226,7 +227,8 @@ namespace DemExam.View
 
         private void CreateOrder_click(object sender, RoutedEventArgs e)
         {
-
+            CreateOrder createOrder = new CreateOrder(this);
+            createOrder.ShowDialog();
         }
     }
 }
