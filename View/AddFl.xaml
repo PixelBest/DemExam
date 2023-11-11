@@ -1,0 +1,28 @@
+﻿<Window x:Class="DemExam.View.AddFl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemExam.View"
+        mc:Ignorable="d"
+        Title="AddFl" Height="550" Width="300">
+    <Grid>
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Label Content="Добавление клиента ФЛ" HorizontalAlignment="Center" Margin="0 20 0 20" FontSize="20"/>
+            <Label Content="Введите Email" HorizontalAlignment="Center" Margin="0 0 0 0"/>
+            <TextBox x:Name="email_txb" Width="200" Margin="0 5 0 0" PreviewTextInput="email_txb_PreviewTextInput"/>
+            <Label Content="Введите ФИО" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+            <TextBox x:Name="fio_txb" Width="200" Margin="0 5 0 0" PreviewTextInput="fio_txb_PreviewTextInput"/>
+            <Label Content="Введите дату рождения" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+            <TextBox x:Name="birth_txb" Width="200" Margin="0 5 0 0" PreviewTextInput="birth_txb_PreviewTextInput"/>
+            <Label Content="Введите серию и номер паспорта" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+            <TextBox x:Name="pasport_txb" Width="200" Margin="0 5 0 0" PreviewTextInput="pasport_txb_PreviewTextInput"/>
+            <Label Content="Введите номер телефона" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+            <TextBox x:Name="phone_txb" Width="200" Margin="0 5 0 0" PreviewTextInput="phone_txb_PreviewTextInput"/>
+            <Label Content="Введите пароль" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+            <TextBox x:Name="password_txb" Width="200" Margin="0 5 0 0"/>
+            <Button Content="Добавить" Width="130" Height="30" Margin="0 20 0 0" Click="Add_Click"/>
+            <Button Content="Назад" Width="70" Height="20" Margin="0 10 0 0" Click="Back_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

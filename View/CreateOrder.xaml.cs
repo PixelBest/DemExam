@@ -41,7 +41,7 @@ namespace DemExam.View
         {
             if (service_cmb.SelectedItem != null && position_cmb.SelectedItem != null && client_cmb.SelectedItem != null)
             {
-                FullOrder newOrder = new FullOrder()
+                FullOrder newfullOrder = new FullOrder()
                 {
                     Name = service_cmb.SelectedItem.ToString(),
                     Price = ListServiceOTK[service_cmb.SelectedIndex].Price,
@@ -52,8 +52,8 @@ namespace DemExam.View
                     StatusServiceInOrder = "В работе",
                     Client = client_cmb.SelectedItem.ToString()
                 };
-                AddToDB(newOrder);
-                orders.ListFullOrder.Add(newOrder);
+                AddToDB(newfullOrder);
+                orders.ListFullOrder.Add(newfullOrder);
                 orders.dtg.Items.Refresh();
             }
             else
@@ -100,6 +100,7 @@ namespace DemExam.View
             command.ExecuteNonQuery();
             connection.Close();
             MessageBox.Show("Заказ успешно добавлен", "Успех", MessageBoxButton.OK);
+            orders.ListOrders = orders.GetOrder();
             this.Close();
         }
 

@@ -230,5 +230,17 @@ namespace DemExam.View
             CreateOrder createOrder = new CreateOrder(this);
             createOrder.ShowDialog();
         }
+
+        private void AddFl_Click(object sender, RoutedEventArgs e)
+        {
+            AddFl addFl = new AddFl(this);
+            addFl.ShowDialog();
+        }
+
+        private void AddYl_Click(object sender, RoutedEventArgs e)
+        {
+            AddYl addYl = new AddYl(this);
+            addYl.ShowDialog();
+        }
     }
 }
